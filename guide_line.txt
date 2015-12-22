@@ -40,11 +40,23 @@ Info:
 - untracked: when create new file
 - staged: when add file to staging area
 ================================================================================
-===================cmd download source code qr_code_project=====================
+===================cmd download source code QR_Code=============================
 ================================================================================
 1. Create new folder with yourname, ex: manage_project
 mkdir /home/thanhtung/Desktop/manage_project
 2. init local repository, this cmd will create a hidden folder is .get/
 cd /home/thanhtung/Desktop/manage_project
 git init
-git clone https://github.com/seteda54/qr_code_project
+git clone https://github.com/seteda/QR_Code
+================================================================================
+===================cmd commit source code QR_Code===============================
+================================================================================
+1. Create acc on https://github.com
+2. cd to QR_Code folder
+3. edit file and folder
+4. run cmd:
+git add .		# for add any file changed to working
+git commit -m "message"	# for commit code
+git push origin master	# this cmd will request your acc and pass to login github.
+			# type your user_acc_name and password
+

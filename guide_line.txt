@@ -1,0 +1,50 @@
+================================================================================
+===================cmd guide line===============================================
+================================================================================
+git init 	# for init git local repository 
+git config user.name "Your_name"	# for init your name when commit code
+git config user.email "Your email"	# for init your email when commit code
+git add * 	# for add any file in current folder
+git commit -m "Message body"	# for commint code to github server with message
+git push origin master		# for finish commit code
+git status	# view status of all file in folder
+
+
+git rm --cached QR_code/	# remove folder Qr_code in cached 
+				# if fatal: Pathspec is in submodule when commit folder
+git add QR_code/		# add every file and subfolder in QR_code folder to commit
+
+
+git checkout -b dev_branch 	# create new branch and change branch to dev_branch
+git checkout master		# comback master branch
+git branch -d dev_branch	# delete dev_branch
+git push origin branch_name	# push branch_name to remote repository
+================================================================================
+===================GIT BEHAVIOR GUIDE LINE======================================
+================================================================================
+WORKING DIRECTORY --git add--> STAGING AREA --git commit--> REPOSITORY
+git add file_name # move file to STAGING AREA, after this step, file has staged status
+
+UNTRACKED	UNMODIFIED	MODIFIED	STAGED
+|		|		|		|
+add the file----------------------------------->|
+|		|		|		|
+|		edit the file-->|		|
+|		|		|		|
+|		|		stage the file->|
+|		|		|		|
+|<----remove file		|		|
+|		|<--------------commit----------|
+
+Info:
+- untracked: when create new file
+- staged: when add file to staging area
+================================================================================
+===================cmd download source code qr_code_project=====================
+================================================================================
+1. Create new folder with yourname, ex: manage_project
+mkdir /home/thanhtung/Desktop/manage_project
+2. init local repository, this cmd will create a hidden folder is .get/
+cd /home/thanhtung/Desktop/manage_project
+git init
+git clone https://github.com/seteda54/qr_code_project

@@ -8,9 +8,9 @@
 #ifndef INCLUDE_TEST_CASE_H_
 #define INCLUDE_TEST_CASE_H_
 
-#include "../../include/main_define.h"
-#include "../../include/db_main.h"
-#include "../libs_ext/lib/check.h"
+#include "../../library/c_lib/core/include/main_define.h"
+#include "../../library/c_lib/core/include/db_main.h"
+#include <check.h>
 
 #define TRUE  1
 #define FALSE 0

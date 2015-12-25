@@ -5,7 +5,7 @@
  *      Author: tungnt
  */
 
-#include "../../include/db_main.h"
+#include "../test_include/test_case.h"
 
 int check_data_character(character_capacities_t in1, character_capacities_t in2){
 	if ((in1.alphanumeric_mode == in2.alphanumeric_mode)

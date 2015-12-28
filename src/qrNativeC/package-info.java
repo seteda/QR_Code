@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author thanhtung
+ *
+ */
+package qrNativeC;

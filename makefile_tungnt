@@ -1,0 +1,51 @@
+########################################################################################
+# include mother makefile (for top define macro)
+-include qr_define.mk
+-inculde subdir.mk
+########################################################################################
+# comment here
+# Rules for makefile
+# TAB action
+########################################################################################
+# step : compile
+# step : link
+########################################################################################
+# DEFINE MACRO FOR MAKE FILE
+########################################################################################
+# first target will be run when make call!
+
+# default this create makefile for java program
+default: qrNativeC.NativeClassC.class
+	@echo 'Building target: $@'
+	@echo 'Creating default from qrNativeC.NativeClassC.class'
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+# qrNativeC.NativeClassC.class dependent on qrNativeC.NativeClassC.java
+qrNativeC.NativeClassC.class : qrNativeC.NativeClassC.java
+	@echo 'Building target: $@'
+	@echo 'Creating qrNativeC.NativeClassC.class from qrNativeC.NativeClassC.java'
+	$(JCC) $(JFLAGS) -d $(SRC) $(CLASS_DIR)/NativeClassC.java
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+# create library JNI
+qrNativeC.NativeClassC.java : $(QR_SRC)/NativeC.o
+	@echo 'Building target: $@'
+	@echo 'Generate header file for JNI'
+	javah -d $(LIB_H)/ -classpath $(SRC)/ qrNativeC.NativeClassC
+	@echo 'Creating libNativeInC.so for JNI'
+	$(CC) -fPIC -shared -I $(JDK_LIB) $(QR_SRC)/NativeC.c -o $(LIBJNI)/libNativeInC.so
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+# create object in C
+$(QR_SRC)/NativeC.o : $(OBJS)
+	@echo 'Building target: $@'
+	$(CC) -o $(OBJS)
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+# clean for rebuild next make
+clean:
+	$(RM) *.class

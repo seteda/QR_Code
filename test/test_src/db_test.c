@@ -17,7 +17,7 @@ int check_data_character(character_capacities_t in1, character_capacities_t in2)
 		return 0;
 }
 
-int check_data_error_correction_cw(error_collection_cw_t in1, error_collection_cw_t in2){
+int check_data_error_correction_cw(error_correction_cw_t in1, error_correction_cw_t in2){
 	if ((in1.ec_cw_per_block == in2.ec_cw_per_block)
 			&& (in1.num_block_group1 == in2.num_block_group1)
 			&& (in1.num_block_group2 == in2.num_block_group2)

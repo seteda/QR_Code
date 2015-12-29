@@ -29,15 +29,17 @@ void print_utf8(char data[]){
 	}
 }
 
-//int main(void) {
-//	Suite *s;
-//	SRunner *sr;
-//	int number_failed;
-//	s = qr_test();
-//	sr = srunner_create(s);
-//	srunner_run_all(sr, CK_NORMAL);
-//	number_failed = srunner_ntests_failed(sr);
-//	srunner_free(sr);
-//	print_utf8("ễ");
-//	return (number_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
-//}
+#ifdef TEST_UNIT
+int main(void) {
+	Suite *s;
+	SRunner *sr;
+	int number_failed;
+	s = qr_test();
+	sr = srunner_create(s);
+	srunner_run_all(sr, CK_NORMAL);
+	number_failed = srunner_ntests_failed(sr);
+	srunner_free(sr);
+	print_utf8("ễ");
+	return (number_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
+}
+#endif

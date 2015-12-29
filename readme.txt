@@ -16,7 +16,7 @@ javac -d src/ src/qrNativeC/NativeClassC.java
 javah -d include/ -classpath src/ qrNativeC.NativeClassC
 
 # Create libNativeInC.so to /bin/build/jni/
-gcc -fPIC -shared -I/opt/tools/java-jdk/jdk1.8.0_65/include/ src/qr_c/NativeC.c -o build/jni/libNativeInC.so
+gcc -fPIC -shared -I/opt/tools/java-jdk/jdk1.8.0_65/include/ src/qr_c/nativeC.c -o build/jni/libNativeInC.so
 
 # run java with C: -Djava.library.path=. follow program find library in current folder
 # LD_LIBRARY_PATH: where library is loated

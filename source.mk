@@ -1,6 +1,6 @@
 include qr_define.mk
 ################################################################################
-# Define source code HERE
+# Define initial source code, not edit this config
 ################################################################################
 # for source code
 OBJ_SRCS :=
@@ -12,9 +12,5 @@ S_UPPER_SRCS :=
 EXECUTABLES :=
 OBJS :=
 C_DEPS :=
-
-# Every subdirectory with source files must be described here
-SUBDIRS := \
-bin/qr_c \
-jni/src/qr_c \
-test/test_src \
+ICLASS :=
+SOURCE_JNI :=

@@ -9,18 +9,18 @@ extern "C" {
 #endif
 /*
  * Class:     qrNativeC_NativeClassC
- * Method:    printdata
- * Signature: (II)V
+ * Method:    getVerQr
+ * Signature: (II)Ldb/Character_capacities;
  */
-JNIEXPORT void JNICALL Java_qrNativeC_NativeClassC_printdata
+JNIEXPORT jobject JNICALL Java_qrNativeC_NativeClassC_getVerQr
   (JNIEnv *, jobject, jint, jint);
 
 /*
  * Class:     qrNativeC_NativeClassC
- * Method:    getVerQr
+ * Method:    printdata
  * Signature: (II)V
  */
-JNIEXPORT void JNICALL Java_qrNativeC_NativeClassC_getVerQr
+JNIEXPORT void JNICALL Java_qrNativeC_NativeClassC_printdata
   (JNIEnv *, jobject, jint, jint);
 
 /*

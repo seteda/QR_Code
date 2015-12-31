@@ -7,7 +7,6 @@
 #include "../include/db_main.h"
 
 
-
 /* =======================================================================
  * EXTERNAL API
  * ======================================================================*/
@@ -2285,6 +2284,56 @@ error_correction_cw_t error_correction_cw(VERSION_QR version,ERROR_CORRECT_LEVEL
 		}
 	return error_correction;
 }
+/*
+ * Don't malloc qr_data.pointer before call me!
+ */
+bool get_data(qr_data_t* out, qr_data_t* in){
+	bool ret = FALSE;
+	if (in->type == out->type){
+		switch (out->type) {
+			case CHARACTER_CAPACITIES:
+				out->qr_data.character_cap = (character_capacities_t*) malloc(sizeof(character_capacities_t));
+				if (out->qr_data.character_cap == NULL){
+					return FALSE;
+				}else{
+					out->qr_data.character_cap->alphanumeric_mode =
+							in->qr_data.character_cap->alphanumeric_mode;
+					out->qr_data.character_cap->byte_mode =
+							in->qr_data.character_cap->byte_mode;
+					out->qr_data.character_cap->kanji_mode =
+							in->qr_data.character_cap->kanji_mode;
+					out->qr_data.character_cap->numeric_mode =
+							in->qr_data.character_cap->numeric_mode;
+				}
+				ret = TRUE;
+				break;
+			case ERROR_CORRECTION_CW:
+				out->qr_data.error_cor_cw = (error_correction_cw_t*) malloc(sizeof(error_correction_cw_t));
+				if (out->qr_data.error_cor_cw == NULL){
+					return FALSE;
+				}else{
+					out->qr_data.error_cor_cw->ec_cw_per_block =
+							in->qr_data.error_cor_cw->ec_cw_per_block;
+					out->qr_data.error_cor_cw->num_block_group1 =
+							in->qr_data.error_cor_cw->num_block_group1;
+					out->qr_data.error_cor_cw->num_block_group2 =
+							in->qr_data.error_cor_cw->num_block_group2;
+					out->qr_data.error_cor_cw->num_cw_block_group1 =
+							in->qr_data.error_cor_cw->num_cw_block_group1;
+					out->qr_data.error_cor_cw->num_cw_block_group2 =
+							in->qr_data.error_cor_cw->num_cw_block_group2;
+					out->qr_data.error_cor_cw->total_data_cw =
+							in->qr_data.error_cor_cw->total_data_cw;
+				}
+				ret = TRUE;
+				break;
+			default:
+				break;
+		}
+	}
+	return ret;
+}
+
 #ifdef TEST_DEBUG
 void print(qr_data_t data){
 	switch (data.type) {

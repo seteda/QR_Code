@@ -1,0 +1,2 @@
+#! /bin/bash
+export LD_LIBRARY_PATH=~/workspace/QR_CODE/build/jnj/lib

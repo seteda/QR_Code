@@ -8,12 +8,13 @@
 #ifndef INCLUDE_DB_MAIN_H_
 #define INCLUDE_DB_MAIN_H_
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
 #include <time.h>
+#include <stdio.h> /* for I/O file - test */
 #include <pthread.h>
+#include <stdbool.h>
 #include "main_define.h"
 
 typedef enum{
@@ -79,6 +80,11 @@ typedef enum{
 	SHIFT_JIS = 0b0100
 }CHARACTER_TYPE;
 
+typedef enum{
+	CHARACTER_CAPACITIES = 1,
+	ERROR_CORRECTION_CW,
+}QR_DATA_TYPE;
+
 typedef struct __character_capacities {
 	int numeric_mode;
 	int alphanumeric_mode;
@@ -86,7 +92,7 @@ typedef struct __character_capacities {
 	int kanji_mode;
 } character_capacities_t;
 
-typedef struct __error_collection_cw {
+typedef struct __error_correction_cw {
 	int total_data_cw; 		/* Total Number of Data Codewords for this Version and EC Level */
 	int ec_cw_per_block;	/* EC Codewords Per Block */
 	int num_block_group1;	/* Number of Blocks in Group 1 */
@@ -95,23 +101,18 @@ typedef struct __error_collection_cw {
 	int num_cw_block_group2;/* Number of Data Codewords in Each of Group 2's Blocks */
 } error_correction_cw_t;
 
-typedef enum{
-	CHARACTER_CAPACITIES = 1,
-	ERROR_CORRECTION_CW
-}QR_DATA_TYPE;
-
-typedef struct __qr_data_t {
-	QR_DATA_TYPE type; /* Type of condition data */
-	union {
+typedef struct __qr_data_t{
+	QR_DATA_TYPE type;
+	union{
 		character_capacities_t* character_cap;
 		error_correction_cw_t* error_cor_cw;
-	} qr_data;
-} qr_data_t;
+	}qr_data;
+}qr_data_t;
 
 /* external from db_main */
 extern character_capacities_t version_qr(VERSION_QR version,ERROR_CORRECT_LEVEL level);
 extern error_correction_cw_t error_correction_cw(VERSION_QR version,ERROR_CORRECT_LEVEL level);
-extern void print(qr_data_t qr_data);
+extern bool get_data(qr_data_t* out, qr_data_t* in);
 
 /* external from data_mask */
 
@@ -122,5 +123,9 @@ extern void print(qr_data_t qr_data);
 /* external from matrix */
 
 /* external from structure_final_msg */
+
+#ifdef TEST_DEBUG
+extern void print(qr_data_t data);
+#endif
 
 #endif /* INCLUDE_DB_MAIN_H_ */

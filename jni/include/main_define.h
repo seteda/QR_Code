@@ -15,7 +15,6 @@
 #define TRUE  			1
 #define FALSE  			0
 
-/* for test */
 #define TEST_DEBUG
 
 #endif /* MAIN_DEFINE_H_ */

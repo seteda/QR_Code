@@ -55,7 +55,8 @@ make_sub: $(SUB_DIRS)
 
 run:
 #	java -Djava.library.path=$(CLASSPATH) qrNativeC.NativeClassC
-	java -classpath $(CLASSPATH) qrNativeC.NativeClassC
+#	java -classpath $(CLASSPATH) qrNativeC.NativeClassC
+	java -classpath $(CLASSPATH) interfaceQR.User
 # clean for rebuild next make
 clean:
 	@echo 'remove output file'

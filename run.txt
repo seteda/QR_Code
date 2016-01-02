@@ -1,0 +1,6 @@
+# run these command for make and run test
+# copy project into /home/User_name/workspace
+make clean
+export LD_LIBRARY_PATH=~/workspace/QR_CODE/build/jni/lib
+make
+make run

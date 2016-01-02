@@ -31,6 +31,150 @@ JNIEXPORT void JNICALL Java_qrNativeC_NativeClassC_printdata
 JNIEXPORT jstring JNICALL Java_qrNativeC_NativeClassC_getLine
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnInt
+ * Signature: (I)I
+ */
+JNIEXPORT jint JNICALL Java_qrNativeC_NativeClassC_returnInt
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnByte
+ * Signature: (I)B
+ */
+JNIEXPORT jbyte JNICALL Java_qrNativeC_NativeClassC_returnByte
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnShort
+ * Signature: (I)S
+ */
+JNIEXPORT jshort JNICALL Java_qrNativeC_NativeClassC_returnShort
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnLong
+ * Signature: (I)J
+ */
+JNIEXPORT jlong JNICALL Java_qrNativeC_NativeClassC_returnLong
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnDouble
+ * Signature: (I)D
+ */
+JNIEXPORT jdouble JNICALL Java_qrNativeC_NativeClassC_returnDouble
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnFloat
+ * Signature: (I)F
+ */
+JNIEXPORT jfloat JNICALL Java_qrNativeC_NativeClassC_returnFloat
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnChar
+ * Signature: (I)C
+ */
+JNIEXPORT jchar JNICALL Java_qrNativeC_NativeClassC_returnChar
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnBoolean
+ * Signature: (I)Z
+ */
+JNIEXPORT jboolean JNICALL Java_qrNativeC_NativeClassC_returnBoolean
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnString
+ * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_qrNativeC_NativeClassC_returnString
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayInt
+ * Signature: ([I)[I
+ */
+JNIEXPORT jintArray JNICALL Java_qrNativeC_NativeClassC_returnArrayInt
+  (JNIEnv *, jobject, jintArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayByte
+ * Signature: ([B)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_qrNativeC_NativeClassC_returnArrayByte
+  (JNIEnv *, jobject, jbyteArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayShort
+ * Signature: ([S)[S
+ */
+JNIEXPORT jshortArray JNICALL Java_qrNativeC_NativeClassC_returnArrayShort
+  (JNIEnv *, jobject, jshortArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayLong
+ * Signature: ([J)[J
+ */
+JNIEXPORT jlongArray JNICALL Java_qrNativeC_NativeClassC_returnArrayLong
+  (JNIEnv *, jobject, jlongArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayDouble
+ * Signature: ([D)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_qrNativeC_NativeClassC_returnArrayDouble___3D
+  (JNIEnv *, jobject, jdoubleArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayDouble
+ * Signature: ([I)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_qrNativeC_NativeClassC_returnArrayDouble___3I
+  (JNIEnv *, jobject, jintArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayFloat
+ * Signature: ([F)[F
+ */
+JNIEXPORT jfloatArray JNICALL Java_qrNativeC_NativeClassC_returnArrayFloat
+  (JNIEnv *, jobject, jfloatArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayChar
+ * Signature: ([C)[C
+ */
+JNIEXPORT jcharArray JNICALL Java_qrNativeC_NativeClassC_returnArrayChar
+  (JNIEnv *, jobject, jcharArray);
+
+/*
+ * Class:     qrNativeC_NativeClassC
+ * Method:    returnArrayBoolean
+ * Signature: ([Z)[Z
+ */
+JNIEXPORT jbooleanArray JNICALL Java_qrNativeC_NativeClassC_returnArrayBoolean
+  (JNIEnv *, jobject, jbooleanArray);
+
 #ifdef __cplusplus
 }
 #endif
